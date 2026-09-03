@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ea" />
+  <title>Write Hanzi test · HSK 1</title>
+  <link rel="stylesheet" href="../../assets/css/tests.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mini"><div class="brand-mark">汉</div><div><p class="eyebrow">HSK 1 practice</p><h1>Write Hanzi</h1></div></div>
+      <a class="back-link" href="index.html">← Study deck</a>
+    </header>
+    <section class="hero"><h2>Put it on<br /><em>paper.</em></h2><p>Look at the pinyin and meaning, write the Hanzi by hand, then reveal the answer and score yourself. Each round has 20 random words.</p></section>
+    <section class="panel">
+      <div class="session-bar"><span>Word <strong id="position">1 / 20</strong></span><span class="score">Correct: <span id="score">0</span></span></div>
+      <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+      <div class="question-label">Write this in Hanzi</div>
+      <div class="prompt"><div class="prompt-pinyin" id="promptPinyin">ài</div><div class="prompt-meaning" id="promptMeaning">to love; to like</div></div>
+      <div class="answer-box hidden-answer" id="answerBox">Write your answer first, then reveal it.</div>
+      <div class="button-row"><button class="button" id="hearButton" type="button">🔊 Hear word</button><button class="button primary" id="revealButton" type="button">Show answer</button><button class="button success" id="gotItButton" type="button">✓ Got it</button><button class="button danger" id="missedButton" type="button">Missed</button></div>
+      <div class="button-row"><button class="button ghost" id="newTestButton" type="button">↻ New 20-word test</button></div>
+      <p class="hint">Space = reveal · Right arrow = next · The score is only for this round.</p>
+    </section>
+    <nav class="link-row" aria-label="Other tests"><a href="pinyin.html">Type pinyin →</a><a href="listening.html">Listening test →</a><a href="speaking.html">Speaking test →</a></nav>
+    <footer>Writing test · use a notebook or blank paper</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="../../assets/data/hsk-1.js"></script>
+  <script src="../../assets/js/test-common.js"></script>
+  <script src="../../assets/js/tests/write-hanzi.js"></script>
+</body>
+</html>

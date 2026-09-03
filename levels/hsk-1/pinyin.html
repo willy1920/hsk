@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ea" />
+  <title>Type pinyin test · HSK 1</title>
+  <link rel="stylesheet" href="../../assets/css/tests.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mini"><div class="brand-mark">拼</div><div><p class="eyebrow">HSK 1 practice</p><h1>Type pinyin</h1></div></div>
+      <a class="back-link" href="index.html">← Study deck</a>
+    </header>
+    <section class="hero"><h2>Pinyin in,<br /><em>Hanzi out.</em></h2><p>Use the English meaning as your clue and type the full pinyin, including tones. When your answer is correct, the Hanzi appears.</p></section>
+    <section class="panel">
+      <div class="session-bar"><span>Word <strong id="position">1 / 20</strong></span><span class="score">Correct: <span id="score">0</span></span></div>
+      <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+      <div class="question-label">Type the pinyin</div>
+      <div class="prompt"><div class="prompt-meaning" id="promptMeaning">to love; to like</div><div class="prompt-note" id="promptCategory">People &amp; feelings</div></div>
+      <label class="field-label" for="pinyinInput">Your pinyin</label>
+      <input id="pinyinInput" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="e.g. ni3 or nǐ" />
+      <div class="answer-box hidden-answer" id="answerBox">Hanzi will appear after a correct answer.</div>
+      <div class="button-row"><button class="button primary" id="checkButton" type="button">Check answer</button><button class="button" id="revealButton" type="button">Reveal</button><button class="button" id="nextButton" type="button">Next →</button></div>
+      <div class="result" id="result"></div>
+      <div class="button-row"><button class="button ghost" id="newTestButton" type="button">↻ New 20-word test</button></div>
+      <p class="hint">Tone marks and tone numbers are accepted: <strong>nǐ</strong> and <strong>ni3</strong> both work.</p>
+    </section>
+    <nav class="link-row" aria-label="Other tests"><a href="write-hanzi.html">← Write Hanzi</a><a href="listening.html">Listening test →</a><a href="speaking.html">Speaking test →</a></nav>
+    <footer>Typing test · type tones when you can</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="../../assets/data/hsk-1.js"></script>
+  <script src="../../assets/js/test-common.js"></script>
+  <script src="../../assets/js/tests/pinyin.js"></script>
+</body>
+</html>

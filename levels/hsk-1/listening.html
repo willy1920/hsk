@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ea" />
+  <title>Listening test · HSK 1</title>
+  <link rel="stylesheet" href="../../assets/css/tests.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mini"><div class="brand-mark">听</div><div><p class="eyebrow">HSK 1 practice</p><h1>Listening test</h1></div></div>
+      <a class="back-link" href="index.html">← Study deck</a>
+    </header>
+    <section class="hero"><h2>Listen first.<br /><em>Write both.</em></h2><p>Play the word, then write what you hear in pinyin and Hanzi. Replay the audio as many times as you need before checking.</p></section>
+    <section class="panel">
+      <div class="session-bar"><span>Word <strong id="position">1 / 20</strong></span><span class="score">Correct: <span id="score">0</span></span></div>
+      <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+      <div class="question-label">What did you hear?</div>
+      <div class="prompt"><button class="button primary" id="hearButton" type="button">🔊 Play audio</button><div class="prompt-note">Listen and write the pinyin + Hanzi below.</div></div>
+      <label class="field-label" for="pinyinInput">Pinyin</label>
+      <input id="pinyinInput" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="e.g. xièxie or xie4xie5" />
+      <label class="field-label" for="hanziInput">Hanzi</label>
+      <input id="hanziInput" type="text" lang="zh-CN" autocomplete="off" placeholder="Write the Chinese characters" />
+      <div class="answer-box hidden-answer" id="answerBox">The answer will appear after you check.</div>
+      <div class="button-row"><button class="button primary" id="checkButton" type="button">Check answer</button><button class="button" id="revealButton" type="button">Reveal</button><button class="button" id="nextButton" type="button">Next →</button></div>
+      <div class="result" id="result"></div>
+      <div class="button-row"><button class="button ghost" id="newTestButton" type="button">↻ New 20-word test</button></div>
+      <p class="hint">Tip: use tone marks or tone numbers in pinyin. Your answer is scored only when both pinyin and Hanzi are correct.</p>
+    </section>
+    <nav class="link-row" aria-label="Other tests"><a href="write-hanzi.html">Write Hanzi →</a><a href="pinyin.html">Type pinyin →</a><a href="speaking.html">Speaking test →</a></nav>
+    <footer>Listening test · try it with headphones</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="../../assets/data/hsk-1.js"></script>
+  <script src="../../assets/js/test-common.js"></script>
+  <script src="../../assets/js/tests/listening.js"></script>
+</body>
+</html>

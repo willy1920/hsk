@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ea" />
+  <title>Speaking test · HSK 1</title>
+  <link rel="stylesheet" href="../../assets/css/tests.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mini"><div class="brand-mark">说</div><div><p class="eyebrow">HSK 1 practice</p><h1>Speaking test</h1></div></div>
+      <a class="back-link" href="index.html">← Study deck</a>
+    </header>
+    <section class="hero"><h2>Say it<br /><em>out loud.</em></h2><p>Look at the Hanzi, say the word into your microphone, and let Mandarin speech recognition check what it heard.</p></section>
+    <section class="panel">
+      <div class="session-bar"><span>Word <strong id="position">1 / 20</strong></span><span class="score">Correct: <span id="score">0</span></span></div>
+      <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+      <div class="question-label">Say this word</div>
+      <div class="prompt"><div class="prompt-hanzi" id="promptHanzi" lang="zh-CN">爱</div><div class="prompt-meaning" id="promptMeaning">to love; to like</div></div>
+      <div class="answer-box hidden-answer" id="answerBox">Pinyin is hidden. Say the Hanzi from memory.</div>
+      <div class="button-row"><button class="button primary" id="startButton" type="button">🎙 Start microphone</button><button class="button" id="hearButton" type="button">🔊 Hear reference</button><button class="button" id="pinyinButton" type="button">Show pinyin</button></div>
+      <div class="microphone-status" id="status">Ready when you are.</div>
+      <div class="heard" id="heard"></div>
+      <div class="result" id="result"></div>
+      <div class="button-row"><button class="button" id="nextButton" type="button">Next →</button><button class="button ghost" id="newTestButton" type="button">↻ New 20-word test</button></div>
+      <div class="help-note" id="supportNote">Speech recognition usually works best in Chrome or Edge with a microphone enabled. The browser must be allowed to use the microphone.</div>
+      <p class="hint">The check compares the Hanzi returned by recognition. Accents, punctuation, and spaces are ignored.</p>
+    </section>
+    <nav class="link-row" aria-label="Other tests"><a href="write-hanzi.html">Write Hanzi →</a><a href="pinyin.html">Type pinyin →</a><a href="listening.html">Listening test →</a></nav>
+    <footer>Speaking test · use a quiet room for better recognition</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="../../assets/data/hsk-1.js"></script>
+  <script src="../../assets/js/test-common.js"></script>
+  <script src="../../assets/js/tests/speaking.js"></script>
+</body>
+</html>

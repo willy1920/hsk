@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ea" />
+  <meta name="description" content="Study the HSK 1 Mandarin vocabulary with audio and flashcards." />
+  <title>HSK 1 study deck</title>
+  <link rel="stylesheet" href="../../assets/css/app.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">汉</div>
+        <div><p class="eyebrow">Mandarin foundations</p><h1>HSK 1 study deck</h1></div>
+      </div>
+      <div class="header-actions">
+        <a class="text-link" href="write-hanzi.html">Practice tests ↗</a>
+        <a class="text-link muted" href="../../index.html">All levels</a>
+        <a class="text-link muted" href="../../assets/pdfs/hsk-1-vocabulary-list.pdf" target="_blank" rel="noreferrer">Original PDF ↗</a>
+      </div>
+    </header>
+
+    <section class="deck-hero">
+      <h2>Small words.<br /><em>Big progress.</em></h2>
+      <p class="hero-copy">Learn all 150 HSK 1 words with tone-marked pinyin, clear meanings, and one-tap pronunciation.</p>
+    </section>
+
+    <section class="progress-card" aria-label="Learning progress">
+      <div class="progress-label"><span id="learnedCount">0</span> / 150 learned</div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="progress-detail" id="progressDetail">A good place to begin.</div>
+    </section>
+
+    <div class="toolbar">
+      <label class="search-wrap" aria-label="Search words">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search Hanzi, pinyin, or meaning…" autocomplete="off" />
+      </label>
+      <label class="select-wrap"><select id="categorySelect" aria-label="Filter by category"><option value="all">All categories</option></select></label>
+      <div class="view-tabs" role="tablist" aria-label="Study view">
+        <button class="tab active" id="listTab" type="button" role="tab" aria-selected="true">List</button>
+        <button class="tab" id="flashTab" type="button" role="tab" aria-selected="false">Flashcards</button>
+      </div>
+      <button class="button" id="shuffleButton" type="button">↝ Shuffle</button>
+      <button class="button ghost" id="resetButton" type="button">Reset progress</button>
+    </div>
+
+    <div class="study-note"><span aria-hidden="true">◎</span><span><strong>Sound tip:</strong> tap Hear on any card. Local audio is included, with browser speech as a fallback.</span></div>
+
+    <section class="list-view" id="listView" aria-live="polite"><div class="word-grid" id="wordGrid"></div></section>
+
+    <section class="flash-view" id="flashView" aria-live="polite">
+      <div class="flash-wrap">
+        <article class="flashcard">
+          <div class="flash-meta"><span id="flashPosition">1 / 150</span><span class="flash-category" id="flashCategory">Word</span></div>
+          <div class="flash-hanzi" id="flashHanzi" lang="zh-CN">爱</div>
+          <div class="flash-pinyin" id="flashPinyin">•••</div>
+          <div class="flash-meaning" id="flashMeaning"></div>
+          <div class="flash-hint" id="flashHint">Think of the pronunciation, then reveal the answer.</div>
+        </article>
+        <div class="flash-controls">
+          <button class="button" id="previousButton" type="button">← Previous</button>
+          <button class="button primary" id="revealButton" type="button">Reveal answer</button>
+          <button class="button" id="nextButton" type="button">Next →</button>
+        </div>
+        <div class="flash-extra"><button class="button small" id="flashSpeakButton" type="button">🔊 Hear it</button><button class="button small learn-button" id="flashLearnButton" type="button">Mark learned</button></div>
+        <div class="flash-progress" id="flashProgress">Use ← → to move, Space to reveal, L to mark learned.</div>
+      </div>
+    </section>
+
+    <footer>HSK 1 vocabulary · saved locally in this browser · no account needed</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="../../assets/data/hsk-1.js"></script>
+  <script src="../../assets/js/study-deck.js"></script>
+</body>
+</html>
