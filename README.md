@@ -7,7 +7,7 @@ HSK 1 is currently available with:
 - 150 vocabulary words with tone-marked pinyin and English meanings
 - local Mandarin audio clips with browser speech fallback
 - list view, search, category filters, flashcards, and saved progress
-- listening, Hanzi writing, pinyin typing, and speaking practice
+- listening, on-screen stroke-order writing, paper Hanzi writing, pinyin typing, and speaking practice
 
 ## Run locally
 
@@ -34,9 +34,10 @@ No build command or package installation is required.
 .
 ├── index.html                  # HSK 1–6 level hub
 ├── assets/
-│   ├── css/                    # Shared deck and practice styles
+│   ├── css/                    # Shared deck, test, and writing styles
 │   ├── data/                   # One data file per level
-│   ├── js/                     # Shared behavior and test modules
+│   │   └── strokes/hsk-1/      # Local stroke-order JSON for HSK 1
+│   ├── js/                     # Shared behavior, tests, and writing library
 │   ├── audio/hsk-1/            # HSK 1 numbered WAV files
 │   └── pdfs/                   # Reference vocabulary PDFs
 └── levels/
@@ -47,5 +48,7 @@ No build command or package installation is required.
 ## Adding another level
 
 Copy the HSK 1 page set into a new `levels/hsk-N/` folder, add `assets/data/hsk-N.js`, and give that data file the same `window.HSK_LEVEL` shape as HSK 1. Add its audio under `assets/audio/hsk-N/`, update the links in the root `index.html`, and reuse the shared scripts.
+
+The on-screen writing page uses local Hanzi Writer data. Add a `strokeDataPath` and one JSON stroke file per unique character when preparing a new level.
 
 Learning progress is stored in `localStorage` with a separate key for each HSK level, so adding levels will not overwrite existing progress.

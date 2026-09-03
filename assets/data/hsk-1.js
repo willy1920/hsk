@@ -163,5 +163,6 @@ window.HSK_LEVEL = {
     category: item[3]
   })),
   audioPath: "../../assets/audio/hsk-1",
-  pdfPath: "../../assets/pdfs/hsk-1-vocabulary-list.pdf"
+  pdfPath: "../../assets/pdfs/hsk-1-vocabulary-list.pdf",
+  strokeDataPath: "../../assets/data/strokes/hsk-1"
 };

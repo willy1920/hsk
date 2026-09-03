@@ -1,0 +1,44 @@
+.writing-panel { padding-bottom: 25px; }
+.writing-layout { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 22px; align-items: center; }
+.writing-stage { min-width: 0; }
+.writing-prompt { margin: 0 0 15px; color: var(--muted); text-align: center; }
+.writing-prompt strong { display: block; color: var(--ink); font-family: Georgia, serif; font-size: 27px; font-weight: 500; }
+.writing-prompt span { display: block; margin-top: 2px; font-size: 14px; }
+.writer-target {
+  width: min(100%, 350px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background-color: #fffdf8;
+  background-image: linear-gradient(var(--paper-deep) 1px, transparent 1px), linear-gradient(90deg, var(--paper-deep) 1px, transparent 1px), linear-gradient(45deg, transparent calc(50% - .5px), rgba(217, 213, 202, .65) 50%, transparent calc(50% + .5px)), linear-gradient(-45deg, transparent calc(50% - .5px), rgba(217, 213, 202, .65) 50%, transparent calc(50% + .5px));
+  background-size: 50% 50%, 50% 50%, 100% 100%, 100% 100%;
+  background-position: -1px -1px, -1px -1px, 0 0, 0 0;
+  touch-action: none;
+  user-select: none;
+}
+.writer-target svg { display: block; width: 100%; height: 100%; }
+.writing-help { margin: 12px auto 0; color: var(--muted); font-size: 12px; text-align: center; }
+.writing-controls { display: grid; gap: 9px; }
+.writing-controls .button { width: 100%; }
+.mode-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; margin-bottom: 13px; border-radius: 12px; background: var(--paper-deep); }
+.mode-tab { min-height: 39px; padding: 7px 9px; color: var(--muted); border: 0; border-radius: 9px; background: transparent; font-size: 13px; font-weight: 800; }
+.mode-tab.active { color: var(--ink); background: var(--card); box-shadow: 0 2px 8px rgba(35,47,43,.08); }
+.writing-status { min-height: 45px; margin: 0 0 12px; padding: 11px 12px; border-radius: 11px; color: var(--muted); background: #f1eee5; font-size: 13px; }
+.writing-status.success { color: #245f4e; background: var(--green-soft); }
+.writing-status.error { color: var(--red); background: var(--red-soft); }
+.writing-status strong { color: var(--ink); }
+.stroke-count { margin: 0 0 15px; color: var(--muted); font-size: 12px; text-align: center; }
+.writing-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 16px; }
+.writing-actions .button { flex: 1 1 135px; }
+.writing-note { margin-top: 16px; padding: 11px 13px; color: #456056; border-left: 3px solid var(--yellow); background: rgba(244, 202, 114, .14); font-size: 12px; }
+.writing-word { color: var(--green); font-family: "Noto Serif CJK SC", "Noto Serif SC", "Songti SC", SimSun, serif; font-size: 23px; }
+
+@media (max-width: 650px) {
+  .writing-layout { grid-template-columns: 1fr; gap: 16px; }
+  .writing-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .writing-controls .mode-tabs, .writing-controls .writing-status, .writing-controls .stroke-count { grid-column: 1 / -1; }
+  .writing-controls .button { width: auto; }
+  .writer-target { width: min(100%, 320px); }
+}

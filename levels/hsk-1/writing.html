@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2ea" />
+  <title>Writing practice · HSK 1</title>
+  <link rel="stylesheet" href="../../assets/css/tests.css" />
+  <link rel="stylesheet" href="../../assets/css/writing.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mini"><div class="brand-mark">写</div><div><p class="eyebrow">HSK 1 practice</p><h1>Writing practice</h1></div></div>
+      <a class="back-link" href="index.html">← Study deck</a>
+    </header>
+
+    <section class="hero"><h2>Write it<br /><em>stroke by stroke.</em></h2><p>Use your finger or a stylus to write Hanzi in the square. Practice mode guides you; test mode hides the answer and checks your stroke order.</p></section>
+
+    <section class="panel writing-panel">
+      <div class="session-bar"><span>Word <strong id="wordPosition">1 / 20</strong></span><span class="score">Mastered: <span id="score">0</span></span></div>
+      <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+
+      <div class="writing-layout">
+        <div class="writing-stage">
+          <div class="writing-prompt"><strong class="writing-word" id="promptHanzi" lang="zh-CN">爱</strong><span id="promptPinyin">ài</span><span id="promptMeaning">to love; to like</span></div>
+          <div class="writer-target" id="writer" aria-label="Hanzi writing area"></div>
+          <p class="writing-help" id="writingHelp">Use one stroke at a time. The grid helps with proportion.</p>
+          <div class="writing-actions"><button class="button" id="clearButton" type="button">↻ Clear</button><button class="button" id="nextButton" type="button" disabled>Next character →</button></div>
+        </div>
+
+        <aside class="writing-controls">
+          <div class="mode-tabs" role="tablist" aria-label="Writing mode">
+            <button class="mode-tab active" id="practiceModeButton" type="button" role="tab" aria-selected="true">Practice</button>
+            <button class="mode-tab" id="testModeButton" type="button" role="tab" aria-selected="false">Test</button>
+          </div>
+          <div class="writing-status" id="status" role="status">Loading stroke data…</div>
+          <p class="stroke-count" id="strokeCount">Stroke 1 of —</p>
+          <button class="button primary" id="startButton" type="button" disabled>Start practice</button>
+          <button class="button" id="orderButton" type="button" disabled>Show stroke order</button>
+          <button class="button" id="newTestButton" type="button">↻ New 20-word round</button>
+          <div class="writing-note"><strong>How it works:</strong> the checker compares your stroke direction, shape, position, and order. Small differences are okay.</div>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="link-row" aria-label="Other tests"><a href="write-hanzi.html">Write on paper →</a><a href="pinyin.html">Type pinyin →</a><a href="listening.html">Listening test →</a><a href="speaking.html">Speaking test →</a></nav>
+    <footer>Writing practice · best with a finger or stylus · progress stays on this device</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="../../assets/data/hsk-1.js"></script>
+  <script src="../../assets/js/test-common.js"></script>
+  <script src="../../assets/js/vendor/hanzi-writer.min.js"></script>
+  <script src="../../assets/js/tests/writing.js"></script>
+</body>
+</html>
