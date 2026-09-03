@@ -46,7 +46,6 @@
     $("#testModeButton").classList.toggle("active", testMode);
     $("#practiceModeButton").setAttribute("aria-selected", String(!testMode));
     $("#testModeButton").setAttribute("aria-selected", String(testMode));
-    $("#startButton").textContent = testMode ? "Start test" : "Start practice";
     $("#orderButton").textContent = testMode ? "Reveal stroke order" : "Show stroke order";
     $("#writingHelp").textContent = testMode
       ? "Write the Hanzi from memory. The answer stays hidden until you reveal it."
@@ -74,7 +73,6 @@
     dataReady = false;
     updatePrompt();
     $("#strokeCount").textContent = "Loading stroke data…";
-    $("#startButton").disabled = true;
     $("#orderButton").disabled = true;
     $("#nextButton").disabled = true;
     setStatus(`Loading ${currentCharacter()}…`);
@@ -105,9 +103,8 @@
       onLoadCharDataSuccess: (charData) => {
         dataReady = true;
         $("#strokeCount").textContent = `Stroke 1 of ${charData.strokes.length}`;
-        $("#startButton").disabled = false;
         $("#orderButton").disabled = false;
-        setStatus(mode === "test" ? "Ready for the test." : "Ready to practice. Follow the hint or try from memory.");
+        startQuiz();
       },
       onLoadCharDataError: () => setStatus("Stroke data could not load. Refresh and try again.", "error")
     });
@@ -117,7 +114,6 @@
     if (!writer || !dataReady || quizActive) return;
     quizActive = true;
     characterComplete = false;
-    $("#startButton").disabled = true;
     $("#orderButton").disabled = true;
     $("#nextButton").disabled = true;
     setStatus(mode === "test" ? "Test started — write the first stroke." : "Write the first stroke.");
@@ -141,7 +137,6 @@
         mastered.add(summaryData.character);
         saveMastery();
         $("#meterFill").style.width = wordIndex === deck.length - 1 && characterIndex === [...currentWord().hanzi].length - 1 ? "100%" : `${(wordIndex / deck.length) * 100}%`;
-        $("#startButton").disabled = true;
         $("#orderButton").disabled = false;
         $("#nextButton").disabled = false;
         $("#nextButton").textContent = characterIndex === [...currentWord().hanzi].length - 1 ? "Next word →" : "Next character →";
@@ -193,7 +188,6 @@
 
   $("#practiceModeButton").addEventListener("click", () => setMode("practice"));
   $("#testModeButton").addEventListener("click", () => setMode("test"));
-  $("#startButton").addEventListener("click", startQuiz);
   $("#orderButton").addEventListener("click", showOrder);
   $("#clearButton").addEventListener("click", clearCharacter);
   $("#nextButton").addEventListener("click", nextCharacter);
